@@ -1,0 +1,15 @@
+@tailwind base; /* Preflight will be injected here */
+
+@tailwind components;
+
+@tailwind utilities;
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+header > div:first-child { 
+    background-color: #01A7E4;
+}
