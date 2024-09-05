@@ -1,144 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="./js/main.js" defer></script>
     <title>K&G Refashion Store</title>
-</head>
+  </head>
 
-<body>
-    
+  <body>
     <!-- HEADER -->
     <header>
-        <div class="flex justify-center items-center h-[120px]">
-            <a href="index.html">
-                <img class="h-[100px]" src="./images/logo.jpg" alt="logo">
-            </a>
-        </div>
+      <div class="flex justify-center items-center h-[120px]">
+        <a href="index.html">
+          <img
+            class="h-[100px] object-contain"
+            src="./images/logo.jpg"
+            alt="logo"
+          />
+        </a>
+      </div>
 
-        <!-- NAV -->
-        <nav class="border-b w-full flex flex-col items-end md:height-auto md:p-5 md:items-center">
-            <button 
-                data-collapse-toggle="navbar-hamburger" 
-                type="button" 
-                class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 md:hidden" aria-controls="navbar-hamburger" aria-expanded="false"
+      <!-- NAV -->
+      <nav
+        class="border-b w-full flex flex-col items-end md:height-auto md:p-5 md:items-center"
+      >
+        <button
+          id="menu-btn"
+          type="button"
+          class="menu-btn inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 md:hidden"
+        >
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div
+          class="menu-content fixed top-0 left-0 bg-sky-300 w-full h-screen p-10 md:flex md:h-auto md:relative md:bg-white md:p-0 md:container"
+        >
+          <div
+            class="flex flex-col items-end justify-between h-full md:flex-row md:w-full md:justify-between"
+          >
+            <button
+              id="inner-menu-btn"
+              type="button"
+              class="menu-btn flex flex-end md:hidden"
             >
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                </svg>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
             </button>
-            <div class="fixed top-0 left-0 bg-sky-300 w-full h-screen p-10 hidden md:flex md:h-auto md:relative md:bg-white md:p-0 md:container" id="navbar-hamburger">
-                <div class="flex flex-col items-end justify-between h-full md:flex-row md:w-full md:justify-between">
-                    <button data-collapse-toggle="navbar-hamburger"
-                            type="button"
-                            class="flex flex-end md:hidden" aria-controls="navbar-hamburger" aria-expanded="true"
-                    >
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                        </svg>
-                    </button>
 
-                    <ul class="flex flex-col gap-10 md:flex-row
-                    text-slate-700 font-bold text-right text-3xl  md:text-lg"
-                    >
-                        <li>
-                            <a href="news.html">Jaunumi</a>
-                        </li>
-                        <li>
-                            <a href="offers.html">Piedāvājumi</a>
-                        </li>
-                        <li>
-                            <a href="gallery.html">Galerija</a>
-                        </li>
-                        <li>
-                            <a href="vacancies.html">Vakances</a>
-                        </li>
-                        <li>
-                            <a href="about.html">Par mums</a>
-                        </li>
-                    </ul>
-                    <ul class="flex justify-around md:w-min gap-10
-                    text-slate-700 font-bold text-lg w-full">
-                        <li>
-                            <a href="">RU</a>
-                        </li>
-                        <li>
-                            <a href="">LV</a>
-                        </li>
-                        <li>
-                            <a href="">EN</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+            <ul
+              class="flex flex-col gap-10 md:flex-row text-slate-700 font-bold text-right text-3xl md:text-lg"
+            >
+              <li>
+                <a href="news.html">Jaunumi</a>
+              </li>
+              <li>
+                <a href="offers.html">Piedāvājumi</a>
+              </li>
+              <li>
+                <a href="gallery.html">Galerija</a>
+              </li>
+              <li>
+                <a href="vacancies.html">Vakances</a>
+              </li>
+              <li>
+                <a href="about.html">Par mums</a>
+              </li>
+            </ul>
+            <ul
+              class="flex justify-around md:w-min gap-10 text-slate-700 font-bold text-lg w-full"
+            >
+              <li>
+                <a href="">RU</a>
+              </li>
+              <li>
+                <a href="">LV</a>
+              </li>
+              <li>
+                <a href="">EN</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- JAUNUMI -->
-    <section class="container mx-auto py-16 px-16 ">
-        <h2 class="text-4xl text-center py-10 font-bold">Jaunumi</h2>
-        <div class="flex gap-10 flex-col lg:flex-row">
-            <a href="" class="group flex flex-col rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-150 basis-1/3 overflow-hidden">
-                <div class="h-80 bg-[url('./images/gallery-1.jpg')] bg-no-repeat bg-center bg-cover group-hover:bg-{110}" ></div>
-                <div class="p-5">
-                    <h3 class="text-xl font-bold">Какое-то название jdfn djkfgn fdsghnl</h3>
-                    <p class="pt-10">01.09.2024</p>
-                </div>
-            </a>
+    <section class="container mx-auto py-16 px-16">
+      <h2 class="text-4xl text-center py-10 font-bold">Jaunumi</h2>
+      <div class="flex gap-10 flex-col lg:flex-row">
+        <a
+          href=""
+          class="group flex flex-col rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-150 basis-1/3 overflow-hidden"
+        >
+          <div
+            class="h-80 bg-[url('./images/gallery-1.jpg')] bg-no-repeat bg-center bg-cover group-hover:bg-{110}"
+          ></div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">
+              Какое-то название 1
+            </h3>
+            <p class="pt-10">01.09.2024</p>
+          </div>
+        </a>
 
-            <a href="" class="flex flex-col rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-150 basis-1/3 overflow-hidden">
-                <div class="h-80 bg-[url('./images/gallery-2.jpg')] bg-no-repeat bg-center bg-cover" ></div>
-                <div class="p-5">
-                    <h3 class="text-xl font-bold">Какое-то название jdfn djkfgn fdsghnl</h3>
-                    <p class="pt-10">01.09.2024</p>
-                </div>
-            </a>
+        <a
+          href=""
+          class="flex flex-col rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-150 basis-1/3 overflow-hidden"
+        >
+          <div
+            class="h-80 bg-[url('./images/gallery-2.jpg')] bg-no-repeat bg-center bg-cover"
+          ></div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">
+              Какое-то название 2
+            </h3>
+            <p class="pt-10">01.09.2024</p>
+          </div>
+        </a>
 
-            <a href="" class="flex flex-col rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-150 basis-1/3 overflow-hidden">
-                <div class="h-80 bg-[url('./images/gallery-3.jpg')] bg-no-repeat bg-center bg-cover" ></div>
-                <div class="p-5">
-                    <h3 class="text-xl font-bold">Какое-то название jdfn djkfgn fdsghnl</h3>
-                    <p class="pt-10">01.09.2024</p>
-                </div>
-            </a>
-        </div>
+        <a
+          href=""
+          class="flex flex-col rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-150 basis-1/3 overflow-hidden"
+        >
+          <div
+            class="h-80 bg-[url('./images/gallery-3.jpg')] bg-no-repeat bg-center bg-cover"
+          ></div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">
+              Какое-то название 3
+            </h3>
+            <p class="pt-10">01.09.2024</p>
+          </div>
+        </a>
+      </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="py-28 bg-sky-300">
-        <div class="container mx-auto w-fit flex flex-col gap-20 md:flex-row">
-            <div class="w-fit">
-                <h3 class="mb-6 text-lg font-medium">Магазины:</h3>
-                <div class="flex flex-col">
-                    <a href="https://maps.app.goo.gl/hZbSKDrCjhfcb2hC6">Rīga, Latgales iela 250</a>
-                    <a href="https://maps.app.goo.gl/ejn3zxXHU1aFVa2w6">Rīga, Dzelzavas iela  57a</a>
-                    <a href="https://maps.app.goo.gl/E7fM7QAFwsktyFS58">Rīga, Kleistu iela 9</a>
-                    <a href="https://maps.app.goo.gl/hyeVh6eVcD33yoLa7">Rīga, Gobas iela 13</a>
-                    <a href="https://maps.app.goo.gl/Ecyp7aUEX87qHgR79">Rīga, Sarkandaugavas iela 6a</a>
-                    <a href="https://maps.app.goo.gl/aXCAbbSKE6iXFpgd8">Salaspils, Rīgas iela 1</a>
-                </div>
-            </div>
-            <div class="w-fit">
-                <h3 class="mb-6 text-lg font-medium">Телефон:</h3>
-                <div class="flex flex-col">
-                    <a href="tel:+28167221">28167221</a>
-                    <a href="tel:+29575720">29575720</a>
-                </div>
-            </div>
-    
-            <div class="w-fit">
-                <h3 class="mb-6 text-lg font-medium">Электронная почта:</h3>
-                <div class="flex">
-                    <a href="mailto:siaaprlatvia@gmail.com ">siaaprlatvia@gmail.com </a>
-                </div>
-            </div>
+      <div class="container mx-auto w-fit flex flex-col gap-20 md:flex-row">
+        <div class="w-fit">
+          <h3 class="mb-6 text-lg font-medium">Магазины:</h3>
+          <div class="flex flex-col">
+            <a href="https://maps.app.goo.gl/hZbSKDrCjhfcb2hC6"
+              >Rīga, Latgales iela 250</a
+            >
+            <a href="https://maps.app.goo.gl/ejn3zxXHU1aFVa2w6"
+              >Rīga, Dzelzavas iela 57a</a
+            >
+            <a href="https://maps.app.goo.gl/E7fM7QAFwsktyFS58"
+              >Rīga, Kleistu iela 9</a
+            >
+            <a href="https://maps.app.goo.gl/hyeVh6eVcD33yoLa7"
+              >Rīga, Gobas iela 13</a
+            >
+            <a href="https://maps.app.goo.gl/Ecyp7aUEX87qHgR79"
+              >Rīga, Sarkandaugavas iela 6a</a
+            >
+            <a href="https://maps.app.goo.gl/aXCAbbSKE6iXFpgd8"
+              >Salaspils, Rīgas iela 1</a
+            >
+          </div>
         </div>
+        <div class="w-fit">
+          <h3 class="mb-6 text-lg font-medium">Телефон:</h3>
+          <div class="flex flex-col">
+            <a href="tel:+28167221">28167221</a>
+            <a href="tel:+29575720">29575720</a>
+          </div>
+        </div>
+
+        <div class="w-fit">
+          <h3 class="mb-6 text-lg font-medium">Электронная почта:</h3>
+          <div class="flex">
+            <a href="mailto:siaaprlatvia@gmail.com ">siaaprlatvia@gmail.com </a>
+          </div>
+        </div>
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-</body>
-
+  </body>
 </html>
